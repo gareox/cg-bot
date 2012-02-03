@@ -1,10 +1,36 @@
 ﻿<Window x:Class="WpfApplication3.MainWindow"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-        Title="MainWindow" Height="350" Width="525" Loaded="Window_Loaded">
+        Title="MainWindow" Height="350" Width="710" Loaded="Window_Loaded" Padding="0">
     <Grid>
-        <ListBox Height="100" HorizontalAlignment="Left" Name="listBox1" VerticalAlignment="Top" Width="120" />
-        <Button Content="Refresh" Height="23" HorizontalAlignment="Left" Margin="126,0,0,0" Name="button1" VerticalAlignment="Top" Width="75" Click="button1_Click" />
-        <Button Content="Select" Height="23" HorizontalAlignment="Left" Margin="126,29,0,0" Name="button2" VerticalAlignment="Top" Width="75" />
+        <ListBox Height="100" HorizontalAlignment="Left" Name="listBox1" VerticalAlignment="Top" Width="120" Margin="0,48,0,0" />
+        <Button Content="Refresh" Height="23" HorizontalAlignment="Left" Margin="126,48,0,0" Name="button1" VerticalAlignment="Top" Width="75" Click="button1_Click" />
+        <Button Content="Select" Height="23" HorizontalAlignment="Left" Margin="126,77,0,0" Name="button2" VerticalAlignment="Top" Width="75" />
+        <Button Content="Show Info" Height="23" HorizontalAlignment="Left" Margin="126,106,0,0" Name="button3" VerticalAlignment="Top" Width="75" Click="button3_Click" />
+        <Label Content="Exp:" Height="28" HorizontalAlignment="Left" Margin="0,219,0,0" Name="label1" VerticalAlignment="Top" Width="109" />
+        <Button Content="Go" Height="23" HorizontalAlignment="Left" Margin="126,169,0,0" Name="button4" VerticalAlignment="Top" Width="75" Click="button4_Click" />
+        <StatusBar Height="23" HorizontalAlignment="Left" Margin="0,288,0,0" Name="pos" VerticalAlignment="Top" Width="688" Padding="0" Background="#37481590">
+            <StatusBarItem Content="Exp:" DataContext="{Binding}" Name="exp1" />
+            <StatusBarItem Content="To Level:" Name="tolvl" />
+            <StatusBarItem Content="Pos:" Name="posi" />
+            <StatusBarItem Content="Hp:" Name="hp1" />
+            <StatusBarItem Content="Mp:" Name="mp1" />
+            <StatusBarItem Content="Level:" Name="lvl1" />
+            <StatusBarItem Content="ML:" Name="ml1" />
+            <StatusBarItem Content="Cap:" Name="cap1" />
+        </StatusBar>
+        <Menu Height="23" HorizontalAlignment="Left" Name="menu1" VerticalAlignment="Top" Width="688">
+            <MenuItem Header="File">
+                <MenuItem Header="Save"/>
+                <MenuItem Header="Load"/>
+                <MenuItem Header="Exit"/>
+            </MenuItem>
+            <MenuItem Header="About">
+                <MenuItem Header="About CGBot" />
+                <MenuItem Header="TpForums.org" />
+                <MenuItem Header="Googlecode" />
+                <MenuItem Header="Special Thanks" />
+            </MenuItem>
+        </Menu>
     </Grid>
 </Window>
