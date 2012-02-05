@@ -44,6 +44,9 @@ namespace TibiaInfo
         public int ypos;
         public int zpos;
         public int xpup;
+        public int xpbet;
+        public int xpprog;
+        public int toup;
 
         /* In these we will store some information in a string format, such as our name, first quest in the quest log. */
         public string name;
@@ -157,12 +160,12 @@ namespace TibiaInfo
 
         #endregion
 
-        #region walker
+        #region Waypoint Builder
 
         #region adding
         private void addwpt()
         {
-            listBox1.Items.Add(Convert.ToString(ReadInt32(Tibia.Handle, XAdr + Base) + ", " + ReadInt32(Tibia.Handle, YAdr + Base) + ", " + ReadInt32(Tibia.Handle, ZAdr + Base)));
+            listBox1.Items.Add("W:" + Convert.ToString(ReadInt32(Tibia.Handle, XAdr + Base) + ", " + ReadInt32(Tibia.Handle, YAdr + Base) + ", " + ReadInt32(Tibia.Handle, ZAdr + Base)));
         }
 
         private void addButton_Click(object sender, EventArgs e)
@@ -230,11 +233,43 @@ namespace TibiaInfo
         
         private void statusBarTimer_Tick(object sender, EventArgs e)
         {
-            statusLevel.Text = Convert.ToString(ReadInt32(Tibia.Handle, LvlAdr));
-            statusExp.Text = Convert.ToString(ReadInt32(Tibia.Handle, XpAdr));
-            statusHp.Text = Convert.ToString(ReadInt32(Tibia.Handle, HpAdr));
-            statusMp.Text = Convert.ToString(ReadInt32(Tibia.Handle, MpAdr));
-            statusToLevel.Text = "TBM" ;
+            xpToLevel();
+            statusLevel.Text = "Level: " + Convert.ToString(ReadInt32(Tibia.Handle, LvlAdr + Base));
+            statusExp.Text = "Exp: " + Convert.ToString(ReadInt32(Tibia.Handle, XpAdr + Base));
+            statusHp.Text = "Hp: " + Convert.ToString(ReadInt32(Tibia.Handle, (HpAdr + Base)) ^ ReadInt32(Tibia.Handle, (Pxor + Base)));
+            statusMp.Text = "Mp: " + Convert.ToString(ReadInt32(Tibia.Handle, (MpAdr + Base)) ^ ReadInt32(Tibia.Handle, (Pxor + Base)));
+            statusToLevel.Text = "To Level: " + Convert.ToString(toup);
+            xpbar.Maximum = xpbet;
+            xpbar.Minimum = 0;
+            xpbar.Value = xpprog;
+        }
+
+        private void xpToLevel()
+        {
+            // xpbet is the var which stores the exp between current level and next level.
+            // calc contains the exp required for next level.
+            // calc1 contains the exp required for current level.
+            int lv = ReadInt32(Tibia.Handle, LvlAdr + Base);
+            int calc = (50 * lv * lv * lv - 150 * lv * lv + 400 * lv) / 3;
+            int lv1 = (ReadInt32(Tibia.Handle, LvlAdr + Base) - 1);
+            int calc1 = (50 * lv1 * lv1 * lv1 - 150 * lv1 * lv1 + 400 * lv1) / 3;
+            xpbet = (calc - calc1);
+            toup = calc - ReadInt32(Tibia.Handle, XpAdr + Base);
+            xpprog = xpbet - toup;
+        }
+
+        #endregion
+
+        #region Menu Controls
+
+        private void exitToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            MainWindow.ActiveForm.Close();
+        }
+
+        private void cGBotToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("CGBot is an open source program released under the public GNU License.");
         }
 
         #endregion
