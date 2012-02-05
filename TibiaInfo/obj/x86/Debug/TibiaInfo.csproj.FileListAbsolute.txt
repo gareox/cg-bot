@@ -1,0 +1,9 @@
+c:\users\josh\documents\visual studio 2010\Projects\TibiaInfo\TibiaInfo\obj\x86\Debug\ResolveAssemblyReference.cache
+c:\users\josh\documents\visual studio 2010\Projects\TibiaInfo\TibiaInfo\obj\x86\Debug\TibiaInfo.MainWindow.resources
+c:\users\josh\documents\visual studio 2010\Projects\TibiaInfo\TibiaInfo\obj\x86\Debug\TibiaInfo.Properties.Resources.resources
+c:\users\josh\documents\visual studio 2010\Projects\TibiaInfo\TibiaInfo\obj\x86\Debug\GenerateResource.read.1.tlog
+c:\users\josh\documents\visual studio 2010\Projects\TibiaInfo\TibiaInfo\obj\x86\Debug\GenerateResource.write.1.tlog
+c:\users\josh\documents\visual studio 2010\Projects\TibiaInfo\TibiaInfo\bin\Debug\TibiaInfo.exe
+c:\users\josh\documents\visual studio 2010\Projects\TibiaInfo\TibiaInfo\bin\Debug\TibiaInfo.pdb
+c:\users\josh\documents\visual studio 2010\Projects\TibiaInfo\TibiaInfo\obj\x86\Debug\TibiaInfo.exe
+c:\users\josh\documents\visual studio 2010\Projects\TibiaInfo\TibiaInfo\obj\x86\Debug\TibiaInfo.pdb
