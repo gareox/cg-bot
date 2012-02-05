@@ -32,32 +32,32 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainWindow));
             this.listBox1 = new System.Windows.Forms.ListBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.fileName = new System.Windows.Forms.TextBox();
+            this.enableWalker = new System.Windows.Forms.CheckBox();
+            this.use = new System.Windows.Forms.Button();
+            this.rope = new System.Windows.Forms.Button();
+            this.addButton = new System.Windows.Forms.Button();
             this.loadButton = new System.Windows.Forms.Button();
+            this.fileName = new System.Windows.Forms.TextBox();
+            this.removeButton = new System.Windows.Forms.Button();
             this.saveButton = new System.Windows.Forms.Button();
             this.clearButton = new System.Windows.Forms.Button();
-            this.removeButton = new System.Windows.Forms.Button();
-            this.addButton = new System.Windows.Forms.Button();
-            this.rope = new System.Windows.Forms.Button();
-            this.use = new System.Windows.Forms.Button();
-            this.enableWalker = new System.Windows.Forms.CheckBox();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.fileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.saveAllToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.loadAllToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.exitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.aboutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.cGBotToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.tPForumsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.bojekToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.saveAllToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.loadAllToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.exitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
             this.statusLevel = new System.Windows.Forms.ToolStripStatusLabel();
             this.statusExp = new System.Windows.Forms.ToolStripStatusLabel();
             this.statusToLevel = new System.Windows.Forms.ToolStripStatusLabel();
             this.statusHp = new System.Windows.Forms.ToolStripStatusLabel();
+            this.statusMp = new System.Windows.Forms.ToolStripStatusLabel();
             this.xpbar = new System.Windows.Forms.ToolStripProgressBar();
             this.statusBarTimer = new System.Windows.Forms.Timer(this.components);
-            this.statusMp = new System.Windows.Forms.ToolStripStatusLabel();
             this.groupBox1.SuspendLayout();
             this.menuStrip1.SuspendLayout();
             this.statusStrip1.SuspendLayout();
@@ -90,13 +90,44 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Walker";
             // 
-            // fileName
+            // enableWalker
             // 
-            this.fileName.Location = new System.Drawing.Point(133, 165);
-            this.fileName.Name = "fileName";
-            this.fileName.Size = new System.Drawing.Size(74, 20);
-            this.fileName.TabIndex = 6;
-            this.fileName.Text = "C:\\Users\\Josh\\Documents\\test.txt";
+            this.enableWalker.AutoSize = true;
+            this.enableWalker.Location = new System.Drawing.Point(133, 249);
+            this.enableWalker.Name = "enableWalker";
+            this.enableWalker.Size = new System.Drawing.Size(65, 17);
+            this.enableWalker.TabIndex = 8;
+            this.enableWalker.Text = "Enabled";
+            this.enableWalker.UseVisualStyleBackColor = true;
+            // 
+            // use
+            // 
+            this.use.Location = new System.Drawing.Point(132, 48);
+            this.use.Name = "use";
+            this.use.Size = new System.Drawing.Size(75, 23);
+            this.use.TabIndex = 2;
+            this.use.Text = "Use";
+            this.use.UseVisualStyleBackColor = true;
+            // 
+            // rope
+            // 
+            this.rope.Location = new System.Drawing.Point(132, 77);
+            this.rope.Name = "rope";
+            this.rope.Size = new System.Drawing.Size(75, 23);
+            this.rope.TabIndex = 7;
+            this.rope.Text = "Rope";
+            this.rope.UseVisualStyleBackColor = true;
+            // 
+            // addButton
+            // 
+            this.addButton.Location = new System.Drawing.Point(132, 19);
+            this.addButton.Name = "addButton";
+            this.addButton.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.addButton.Size = new System.Drawing.Size(75, 23);
+            this.addButton.TabIndex = 1;
+            this.addButton.Text = "Add";
+            this.addButton.UseVisualStyleBackColor = true;
+            this.addButton.Click += new System.EventHandler(this.addButton_Click);
             // 
             // loadButton
             // 
@@ -107,6 +138,24 @@
             this.loadButton.Text = "Load";
             this.loadButton.UseVisualStyleBackColor = true;
             this.loadButton.Click += new System.EventHandler(this.loadButton_Click);
+            // 
+            // fileName
+            // 
+            this.fileName.Location = new System.Drawing.Point(133, 165);
+            this.fileName.Name = "fileName";
+            this.fileName.Size = new System.Drawing.Size(74, 20);
+            this.fileName.TabIndex = 6;
+            this.fileName.Text = "C:\\Users\\Josh\\Documents\\test.txt";
+            // 
+            // removeButton
+            // 
+            this.removeButton.Location = new System.Drawing.Point(132, 106);
+            this.removeButton.Name = "removeButton";
+            this.removeButton.Size = new System.Drawing.Size(75, 23);
+            this.removeButton.TabIndex = 2;
+            this.removeButton.Text = "Remove";
+            this.removeButton.UseVisualStyleBackColor = true;
+            this.removeButton.Click += new System.EventHandler(this.removeButton_Click);
             // 
             // saveButton
             // 
@@ -127,55 +176,6 @@
             this.clearButton.Text = "Clear";
             this.clearButton.UseVisualStyleBackColor = true;
             this.clearButton.Click += new System.EventHandler(this.clearButton_Click);
-            // 
-            // removeButton
-            // 
-            this.removeButton.Location = new System.Drawing.Point(132, 106);
-            this.removeButton.Name = "removeButton";
-            this.removeButton.Size = new System.Drawing.Size(75, 23);
-            this.removeButton.TabIndex = 2;
-            this.removeButton.Text = "Remove";
-            this.removeButton.UseVisualStyleBackColor = true;
-            this.removeButton.Click += new System.EventHandler(this.removeButton_Click);
-            // 
-            // addButton
-            // 
-            this.addButton.Location = new System.Drawing.Point(132, 19);
-            this.addButton.Name = "addButton";
-            this.addButton.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.addButton.Size = new System.Drawing.Size(75, 23);
-            this.addButton.TabIndex = 1;
-            this.addButton.Text = "Add";
-            this.addButton.UseVisualStyleBackColor = true;
-            this.addButton.Click += new System.EventHandler(this.addButton_Click);
-            // 
-            // rope
-            // 
-            this.rope.Location = new System.Drawing.Point(132, 77);
-            this.rope.Name = "rope";
-            this.rope.Size = new System.Drawing.Size(75, 23);
-            this.rope.TabIndex = 7;
-            this.rope.Text = "Rope";
-            this.rope.UseVisualStyleBackColor = true;
-            // 
-            // use
-            // 
-            this.use.Location = new System.Drawing.Point(132, 48);
-            this.use.Name = "use";
-            this.use.Size = new System.Drawing.Size(75, 23);
-            this.use.TabIndex = 2;
-            this.use.Text = "Use";
-            this.use.UseVisualStyleBackColor = true;
-            // 
-            // enableWalker
-            // 
-            this.enableWalker.AutoSize = true;
-            this.enableWalker.Location = new System.Drawing.Point(133, 249);
-            this.enableWalker.Name = "enableWalker";
-            this.enableWalker.Size = new System.Drawing.Size(65, 17);
-            this.enableWalker.TabIndex = 8;
-            this.enableWalker.Text = "Enabled";
-            this.enableWalker.UseVisualStyleBackColor = true;
             // 
             // menuStrip1
             // 
@@ -198,34 +198,6 @@
             this.fileToolStripMenuItem.Size = new System.Drawing.Size(37, 20);
             this.fileToolStripMenuItem.Text = "File";
             // 
-            // aboutToolStripMenuItem
-            // 
-            this.aboutToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.cGBotToolStripMenuItem,
-            this.tPForumsToolStripMenuItem,
-            this.bojekToolStripMenuItem});
-            this.aboutToolStripMenuItem.Name = "aboutToolStripMenuItem";
-            this.aboutToolStripMenuItem.Size = new System.Drawing.Size(52, 20);
-            this.aboutToolStripMenuItem.Text = "About";
-            // 
-            // cGBotToolStripMenuItem
-            // 
-            this.cGBotToolStripMenuItem.Name = "cGBotToolStripMenuItem";
-            this.cGBotToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
-            this.cGBotToolStripMenuItem.Text = "CGBot";
-            // 
-            // tPForumsToolStripMenuItem
-            // 
-            this.tPForumsToolStripMenuItem.Name = "tPForumsToolStripMenuItem";
-            this.tPForumsToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
-            this.tPForumsToolStripMenuItem.Text = "TPForums";
-            // 
-            // bojekToolStripMenuItem
-            // 
-            this.bojekToolStripMenuItem.Name = "bojekToolStripMenuItem";
-            this.bojekToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
-            this.bojekToolStripMenuItem.Text = "Bojek";
-            // 
             // saveAllToolStripMenuItem
             // 
             this.saveAllToolStripMenuItem.Name = "saveAllToolStripMenuItem";
@@ -243,6 +215,36 @@
             this.exitToolStripMenuItem.Name = "exitToolStripMenuItem";
             this.exitToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.exitToolStripMenuItem.Text = "Exit";
+            this.exitToolStripMenuItem.Click += new System.EventHandler(this.exitToolStripMenuItem_Click);
+            // 
+            // aboutToolStripMenuItem
+            // 
+            this.aboutToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.cGBotToolStripMenuItem,
+            this.tPForumsToolStripMenuItem,
+            this.bojekToolStripMenuItem});
+            this.aboutToolStripMenuItem.Name = "aboutToolStripMenuItem";
+            this.aboutToolStripMenuItem.Size = new System.Drawing.Size(52, 20);
+            this.aboutToolStripMenuItem.Text = "About";
+            // 
+            // cGBotToolStripMenuItem
+            // 
+            this.cGBotToolStripMenuItem.Name = "cGBotToolStripMenuItem";
+            this.cGBotToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.cGBotToolStripMenuItem.Text = "CGBot";
+            this.cGBotToolStripMenuItem.Click += new System.EventHandler(this.cGBotToolStripMenuItem_Click);
+            // 
+            // tPForumsToolStripMenuItem
+            // 
+            this.tPForumsToolStripMenuItem.Name = "tPForumsToolStripMenuItem";
+            this.tPForumsToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.tPForumsToolStripMenuItem.Text = "TPForums";
+            // 
+            // bojekToolStripMenuItem
+            // 
+            this.bojekToolStripMenuItem.Name = "bojekToolStripMenuItem";
+            this.bojekToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.bojekToolStripMenuItem.Text = "Bojek";
             // 
             // statusStrip1
             // 
@@ -283,22 +285,23 @@
             this.statusHp.Size = new System.Drawing.Size(42, 17);
             this.statusHp.Text = "Health";
             // 
-            // xpbar
-            // 
-            this.xpbar.Name = "xpbar";
-            this.xpbar.Size = new System.Drawing.Size(100, 16);
-            this.xpbar.Value = 100;
-            // 
-            // statusBarTimer
-            // 
-            this.statusBarTimer.Enabled = true;
-            this.statusBarTimer.Tick += new System.EventHandler(this.statusBarTimer_Tick);
-            // 
             // statusMp
             // 
             this.statusMp.Name = "statusMp";
             this.statusMp.Size = new System.Drawing.Size(37, 17);
             this.statusMp.Text = "Mana";
+            // 
+            // xpbar
+            // 
+            this.xpbar.Name = "xpbar";
+            this.xpbar.Size = new System.Drawing.Size(100, 16);
+            this.xpbar.Step = 100;
+            this.xpbar.Style = System.Windows.Forms.ProgressBarStyle.Continuous;
+            // 
+            // statusBarTimer
+            // 
+            this.statusBarTimer.Enabled = true;
+            this.statusBarTimer.Tick += new System.EventHandler(this.statusBarTimer_Tick);
             // 
             // MainWindow
             // 
@@ -315,7 +318,6 @@
             this.Name = "MainWindow";
             this.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Hide;
             this.Text = "CGBot";
-            this.TopMost = true;
             this.Load += new System.EventHandler(this.Form1_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
