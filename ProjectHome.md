@@ -1,0 +1,5 @@
+CGBot is a bot written in C#, for the MMORPG Tibia. It is written entirely by Joshua Griffith, with the help and support of those at http://www.tpforums.org/ I will publish special thanks to certain members at some point in the future.
+
+As of yet I will not upload all the source for the software, but snippets of code which I am using to experiment. This is due to the nature of the project. I learnt to develop a program with a massive structure of functions at first, since I didn't have a clue how to start learning to read memory addresses and the only good source to learn from is outdated and uncomprehendable by the general public including myself. I may (not) release my functions, since they are not going to assist in any way with this particular project. The intention of this publically released source code is that someone can look at it and understand what is being done, and how it is being done.
+
+I'm starting to type too much now, so will continue through these pages and hopefully get some source code up here.
